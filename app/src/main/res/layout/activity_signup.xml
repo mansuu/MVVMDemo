@@ -20,12 +20,17 @@
             android:layout_gravity="center"
             android:layout_margin="8dp"
             android:orientation="vertical">
-
+            <EditText
+                android:layout_width="match_parent"
+                android:hint="@string/full_name"
+                android:layout_height="wrap_content"
+                android:text="@={viewModel.userName}"
+                />
             <EditText
                 android:id="@+id/inEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:text="@={viewModel.userEmail}"
@@ -36,10 +41,16 @@
                 android:id="@+id/inPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:padding="8dp"
                 android:text="@={viewModel.userPassword}" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_password"
+                android:text="@={viewModel.confirmPassword}"
+                />
 
 
             <Button
@@ -47,7 +58,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:onClick="@{()-> viewModel.onLoginClicked()}"
-                android:text="LOGIN"
+                android:text="@string/create_account"
+                android:textAllCaps="true"
+                android:textColor="@color/colorAccent"
                 bind:toastMessage="@{viewModel.toastMessage}" />
 
 
